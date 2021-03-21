@@ -1,17 +1,17 @@
-program PracticeA;
+ï»¿program PracticeA;
 
-{$APPTYPE CONSOLE}
-
-{$R *.res}
-
-uses
-  System.SysUtils;
+var
+  a, b, c : Integer;
+  s : ShortString;
 
 begin
-  try
-    { TODO -oUser -cConsole ƒƒCƒ“ : ‚±‚±‚ÉƒR[ƒh‚ğ‹Lq‚µ‚Ä‚­‚¾‚³‚¢ }
-  except
-    on E: Exception do
-      Writeln(E.ClassName, ': ', E.Message);
-  end;
+  // æ•´æ•°ã®å…¥åŠ›
+  Readln(a);
+  // ã‚¹ãƒšãƒ¼ã‚¹åŒºåˆ‡ã‚Šã®æ•´æ•°ã®å…¥åŠ›
+  Read(b);
+  Readln(c);
+  // æ–‡å­—åˆ—ã®å…¥åŠ›
+  Readln(s);
+  // å‡ºåŠ›
+  Writeln(a + b + c, ' ', s);
 end.
