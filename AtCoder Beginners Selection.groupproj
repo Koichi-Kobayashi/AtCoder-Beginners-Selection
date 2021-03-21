@@ -3,7 +3,10 @@
         <ProjectGuid>{E0C745FE-77C5-46BD-A394-1B569A91ABBE}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="PracticeA.dproj">
+        <Projects Include="PracticeA\PracticeA.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ABC086A\ABC086A.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -15,22 +18,31 @@
         </BorlandProject>
     </ProjectExtensions>
     <Target Name="PracticeA">
-        <MSBuild Projects="PracticeA.dproj"/>
+        <MSBuild Projects="PracticeA\PracticeA.dproj"/>
     </Target>
     <Target Name="PracticeA:Clean">
-        <MSBuild Projects="PracticeA.dproj" Targets="Clean"/>
+        <MSBuild Projects="PracticeA\PracticeA.dproj" Targets="Clean"/>
     </Target>
     <Target Name="PracticeA:Make">
-        <MSBuild Projects="PracticeA.dproj" Targets="Make"/>
+        <MSBuild Projects="PracticeA\PracticeA.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ABC086A">
+        <MSBuild Projects="ABC086A\ABC086A.dproj"/>
+    </Target>
+    <Target Name="ABC086A:Clean">
+        <MSBuild Projects="ABC086A\ABC086A.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ABC086A:Make">
+        <MSBuild Projects="ABC086A\ABC086A.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="PracticeA"/>
+        <CallTarget Targets="PracticeA;ABC086A"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="PracticeA:Clean"/>
+        <CallTarget Targets="PracticeA:Clean;ABC086A:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="PracticeA:Make"/>
+        <CallTarget Targets="PracticeA:Make;ABC086A:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
