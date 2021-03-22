@@ -1,18 +1,18 @@
-﻿program PracticeA;
+﻿program ABC086A;
 
 var
-  a, b, c : Integer;
-  s : ShortString;
+  a, b : Integer;
 
 begin
-  // 整数の入力
-  Readln(a);
   // スペース区切りの整数の入力
-  Read(b);
-  Readln(c);
-  // 文字列の入力
-  Readln(s);
-  // 出力
-  Writeln(a + b + c, ' ', s);
+  Read(a);
+  Readln(b);
+  if a * b mod 2 = 0 then
+    // 偶数
+    Writeln('Even')
+  else
+    // 奇数
+    Writeln('Odd');
+
 end.
 
