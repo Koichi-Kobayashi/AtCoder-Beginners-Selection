@@ -4,14 +4,14 @@ uses sysutils;
 
 var
   a : string;
-  I, sum : Integer;
+  sum : Integer = 0;
+  I : Integer;
 
 begin
-  sum := 0;
   Readln(a);
-  for I := 0 to Length(a) - 1 do begin
+  for I := 1 to Length(a) do begin
     if StrToInt(Copy(a, I, 1)) = 1 then
-      sum := sum + StrToInt(Copy(a, I, 1));
+      Inc(sum);
   end;
   Writeln(sum);
 end.
